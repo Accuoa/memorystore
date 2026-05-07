@@ -1,0 +1,100 @@
+{"id":1,"text":"My birthday is March 12.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":2,"text":"My partner's name is Sam.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":3,"text":"My mom is named Eleanor and lives in Portland, Oregon.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":4,"text":"My dad's name is Hector; he's a retired civil engineer.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":5,"text":"I have one younger brother, Theo, who's three years younger than me.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":6,"text":"I work at Acme Corp on the data platform team.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":7,"text":"My title is Senior Software Engineer.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":8,"text":"My team owns the streaming ingestion pipeline; we have eight engineers including the manager.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":9,"text":"The main project I lead this year is the schema-registry rewrite.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":10,"text":"My manager is Priya Raman; she joined Acme about a year before I did.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":11,"text":"I live in Park Slope, Brooklyn.","metadata":{"category":"fact","subcategory":"location"}}
+{"id":12,"text":"My apartment is number 4B in a five-story walk-up on 7th Avenue.","metadata":{"category":"fact","subcategory":"location"}}
+{"id":13,"text":"I moved to New York from Austin, Texas in 2019.","metadata":{"category":"fact","subcategory":"location"}}
+{"id":14,"text":"The Acme office I report to is the Hudson Yards location on the 38th floor.","metadata":{"category":"fact","subcategory":"location"}}
+{"id":15,"text":"I went to undergrad at Carnegie Mellon.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":16,"text":"I majored in computer science with a minor in linguistics.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":17,"text":"I graduated in 2017.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":18,"text":"My high school was Lincoln Park High in Chicago.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":19,"text":"I bike to the office most days; the ride is about 35 minutes door to door.","metadata":{"category":"fact","subcategory":"schedule"}}
+{"id":20,"text":"My usual working hours are 9:30 a.m. to 6 p.m. Eastern.","metadata":{"category":"fact","subcategory":"schedule"}}
+{"id":21,"text":"I run with the Prospect Park running club every Saturday morning at seven.","metadata":{"category":"fact","subcategory":"schedule"}}
+{"id":22,"text":"My dog is a 4-year-old border collie named Mochi.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":23,"text":"We also have a rescue cat named Biscuit who showed up at the door in 2021.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":24,"text":"Sam and I got married on June 9, 2022.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":25,"text":"My phone is on Mint Mobile and the number ends in 0418.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":26,"text":"My next equity vest at Acme is in November 2026.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":27,"text":"Our team offsite is held annually in Asheville, North Carolina.","metadata":{"category":"fact","subcategory":"work"}}
+{"id":28,"text":"My undergrad thesis advisor was Professor Lior Aronson in the SCS department.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":29,"text":"My senior thesis was on incremental dataflow programming.","metadata":{"category":"fact","subcategory":"education"}}
+{"id":30,"text":"My primary care doctor is Dr. Naomi Ortiz at NYU Langone.","metadata":{"category":"fact","subcategory":"health"}}
+{"id":31,"text":"I see a dentist in Park Slope named Dr. Williams every six months.","metadata":{"category":"fact","subcategory":"health"}}
+{"id":32,"text":"I bank with Charles Schwab for checking and Ally for savings.","metadata":{"category":"fact","subcategory":"finance"}}
+{"id":33,"text":"My main credit card is the Chase Sapphire Reserve.","metadata":{"category":"fact","subcategory":"finance"}}
+{"id":34,"text":"I drive a 2018 Subaru Outback in dark green.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":35,"text":"My emergency contact is Sam, plus my brother Theo as backup.","metadata":{"category":"fact","subcategory":"personal"}}
+{"id":36,"text":"I'm allergic to penicillin and to most stone fruits.","metadata":{"category":"fact","subcategory":"health"}}
+{"id":37,"text":"My blood type is O positive.","metadata":{"category":"fact","subcategory":"health"}}
+{"id":38,"text":"My gym is Chalk Climbing in Gowanus; I go three times a week.","metadata":{"category":"fact","subcategory":"schedule"}}
+{"id":39,"text":"I get my hair cut at Persons of Interest in Williamsburg, usually by a barber named Jared.","metadata":{"category":"fact","subcategory":"schedule"}}
+{"id":40,"text":"I'm originally from Evanston, Illinois.","metadata":{"category":"fact","subcategory":"location"}}
+{"id":41,"text":"I prefer coffee over tea, especially espresso.","metadata":{"category":"preference","subcategory":"food"}}
+{"id":42,"text":"Breakfast for me is almost always two eggs over medium with sourdough toast.","metadata":{"category":"preference","subcategory":"food"}}
+{"id":43,"text":"I'd take a craft IPA over a lager any day.","metadata":{"category":"preference","subcategory":"food"}}
+{"id":44,"text":"I almost never eat red meat — chicken or fish if anything.","metadata":{"category":"preference","subcategory":"food"}}
+{"id":45,"text":"For a code editor I use Neovim with the LunarVim distribution.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":46,"text":"I prefer dark mode in every app that supports it.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":47,"text":"My terminal of choice is Ghostty, with the Tokyo Night theme.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":48,"text":"I use Linux on my personal laptop — specifically Fedora — and macOS at work.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":49,"text":"For browsers I stick with Firefox and have for over a decade.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":50,"text":"I'd rather get a Slack DM than an email any day; Slack threads feel less heavy than reply chains.","metadata":{"category":"preference","subcategory":"communication"}}
+{"id":51,"text":"I'm an async-first communicator and avoid scheduling meetings before 11 a.m.","metadata":{"category":"preference","subcategory":"communication"}}
+{"id":52,"text":"For 1-on-1s I prefer walking meetings over conference rooms.","metadata":{"category":"preference","subcategory":"communication"}}
+{"id":53,"text":"I always pick window seats on flights, even on red-eyes.","metadata":{"category":"preference","subcategory":"travel"}}
+{"id":54,"text":"My go-to hotel chain is Hyatt — mostly because of the loyalty perks.","metadata":{"category":"preference","subcategory":"travel"}}
+{"id":55,"text":"For long trips I pack carry-on only; I haven't checked a bag since 2018.","metadata":{"category":"preference","subcategory":"travel"}}
+{"id":56,"text":"I'd rather take a train than fly anywhere under five hours away.","metadata":{"category":"preference","subcategory":"travel"}}
+{"id":57,"text":"I read mostly on a Kindle Paperwhite — paperbacks only for fiction I'll reread.","metadata":{"category":"preference","subcategory":"media"}}
+{"id":58,"text":"I subscribe to Spotify for music and Apple TV for shows; I dropped Netflix in 2023.","metadata":{"category":"preference","subcategory":"media"}}
+{"id":59,"text":"I listen to podcasts at 1.4x speed and refuse to go any faster than that.","metadata":{"category":"preference","subcategory":"media"}}
+{"id":60,"text":"I write notes in Obsidian and refuse to use Notion for anything personal.","metadata":{"category":"preference","subcategory":"software"}}
+{"id":61,"text":"In meetings I prefer no slides — just a Google Doc that we edit live.","metadata":{"category":"preference","subcategory":"communication"}}
+{"id":62,"text":"I'd rather cook at home than eat out, and I do so most weeknights.","metadata":{"category":"preference","subcategory":"food"}}
+{"id":63,"text":"For workouts I prefer climbing or running; I don't like lifting weights.","metadata":{"category":"preference","subcategory":"lifestyle"}}
+{"id":64,"text":"On vacation I'd rather rent an apartment than stay in a resort.","metadata":{"category":"preference","subcategory":"travel"}}
+{"id":65,"text":"I keep my phone on silent all day and only check Slack between focus blocks.","metadata":{"category":"preference","subcategory":"lifestyle"}}
+{"id":66,"text":"In October I mentioned I was learning Rust on the side, mostly through the official book and Advent of Code.","metadata":{"category":"past_conversation","time":"October"}}
+{"id":67,"text":"Last quarter we discussed migrating from Postgres to ClickHouse for analytics, and I argued for keeping Postgres a bit longer.","metadata":{"category":"past_conversation","time":"last_quarter"}}
+{"id":68,"text":"In Q3 I told you I was thinking about asking for a promotion to staff engineer.","metadata":{"category":"past_conversation","time":"Q3"}}
+{"id":69,"text":"Last summer I mentioned I'd been getting into bouldering and signed up at a new gym.","metadata":{"category":"past_conversation","time":"last_summer"}}
+{"id":70,"text":"Two years ago I told you about a trip to Japan that ended up being a turning point in how I think about minimalism.","metadata":{"category":"past_conversation","time":"two_years_ago"}}
+{"id":71,"text":"In April we talked about whether I should switch from Vue to React for a side project.","metadata":{"category":"past_conversation","time":"April"}}
+{"id":72,"text":"Last December I shared that I was reading a lot about distributed transactions, especially Spanner's TrueTime.","metadata":{"category":"past_conversation","time":"last_December"}}
+{"id":73,"text":"In our June chat I said I was planning a backpacking trip through Patagonia for early 2026.","metadata":{"category":"past_conversation","time":"June"}}
+{"id":74,"text":"In Q1 of this year I told you my team was paged eleven times in one weekend and we were going to invest in better SLOs.","metadata":{"category":"past_conversation","time":"Q1"}}
+{"id":75,"text":"Back in February I mentioned I was considering doing a six-week sabbatical and bicycling the Pacific Coast.","metadata":{"category":"past_conversation","time":"February"}}
+{"id":76,"text":"Last fall I shared that my brother got engaged and the wedding would be in spring 2026.","metadata":{"category":"past_conversation","time":"last_fall"}}
+{"id":77,"text":"In May I told you about adopting Mochi from a shelter in upstate New York.","metadata":{"category":"past_conversation","time":"May"}}
+{"id":78,"text":"In an August conversation I mentioned that we were leaning toward Temporal for our workflow engine.","metadata":{"category":"past_conversation","time":"August"}}
+{"id":79,"text":"Last winter I told you about getting really into sourdough; I had a starter named Pierre that ended up being too aggressive.","metadata":{"category":"past_conversation","time":"last_winter"}}
+{"id":80,"text":"In November we discussed whether I should stay at Acme or take a recruiter call from Stripe; I stayed.","metadata":{"category":"past_conversation","time":"November"}}
+{"id":81,"text":"Last spring I mentioned starting therapy with a therapist named Dr. Lin and that it had been helpful.","metadata":{"category":"past_conversation","time":"last_spring"}}
+{"id":82,"text":"In our March chat I said I was switching my retirement contributions to Roth instead of traditional 401(k).","metadata":{"category":"past_conversation","time":"March"}}
+{"id":83,"text":"Last July I told you about a book club my coworker Hadi started focused on systems classics.","metadata":{"category":"past_conversation","time":"last_July"}}
+{"id":84,"text":"A while back, in early 2024, I shared that I was learning to play the cello and had hired an instructor named Elena.","metadata":{"category":"past_conversation","time":"early_2024"}}
+{"id":85,"text":"In our last September session I mentioned that we were finally killing the legacy ETL job written in Python 2.","metadata":{"category":"past_conversation","time":"last_September"}}
+{"id":86,"text":"My friend Anna's birthday is March 4 and I always forget to send a card.","metadata":{"category":"decoy","relates_to_id":1}}
+{"id":87,"text":"My old internship was at Acme Logistics — different company, same name — back in 2016.","metadata":{"category":"decoy","relates_to_id":6}}
+{"id":88,"text":"My partner Sam has a younger sister, also named Sam, which is genuinely confusing at family dinners.","metadata":{"category":"decoy","relates_to_id":2}}
+{"id":89,"text":"I used to live in Crown Heights before I moved to Park Slope.","metadata":{"category":"decoy","relates_to_id":11}}
+{"id":90,"text":"My friend Marco went to Carnegie Mellon for grad school; we overlapped one semester.","metadata":{"category":"decoy","relates_to_id":15}}
+{"id":91,"text":"Mochi the cat — not my dog — belongs to my neighbor down the hall.","metadata":{"category":"decoy","relates_to_id":22}}
+{"id":92,"text":"Theo's roommate, also named Theo, just got a new job at a logistics startup.","metadata":{"category":"decoy","relates_to_id":5}}
+{"id":93,"text":"My coworker Hadi just bought a 2018 Subaru Forester; we joke about Subaru ownership at the office.","metadata":{"category":"decoy","relates_to_id":34}}
+{"id":94,"text":"Priya from finance — different Priya, not my manager — sent me a calendar invite for budget review.","metadata":{"category":"decoy","relates_to_id":10}}
+{"id":95,"text":"Sam's parents got married in June 1986 — total coincidence with our anniversary month.","metadata":{"category":"decoy","relates_to_id":24}}
+{"id":96,"text":"I sometimes drink tea in the afternoon when I want to taper off caffeine before bed.","metadata":{"category":"decoy","relates_to_id":41}}
+{"id":97,"text":"My company's office uses light mode by default on the shared TVs in the lobby; it bugs me.","metadata":{"category":"decoy","relates_to_id":46}}
+{"id":98,"text":"Last year I considered learning Go but never followed through; I went with Rust instead.","metadata":{"category":"decoy","relates_to_id":66}}
+{"id":99,"text":"My uncle bikes to work in Boulder; he's the one who got me into commuting by bike originally.","metadata":{"category":"decoy","relates_to_id":19}}
+{"id":100,"text":"Sam used to work at Stripe before they joined a fintech in Brooklyn.","metadata":{"category":"decoy","relates_to_id":80}}

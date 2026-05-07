@@ -8,5 +8,6 @@ dist/
 .env.local
 logs/
 data/
+!benchmark/data/
 benchmark/baseline*.jsonl
 config.local.yml
