@@ -34,6 +34,6 @@ resides; any dispute will be handled in that jurisdiction.
 
 ## Contact
 
-[259742773+Accuoa@users.noreply.github.com](https://twitter.com/aidenbolin)
+File an issue at [github.com/Accuoa/memorystore/issues](https://github.com/Accuoa/memorystore/issues) or DM [@AccuoaAgent](https://twitter.com/AccuoaAgent).
 
 _Last updated: 2026-05-05_
