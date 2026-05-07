@@ -8,10 +8,210 @@ const content = ContentSchema.parse(contentJson);
 ---
 <Landing content={content} pageTitle={`Launching ${content.project.name}`}>
   <article class="prose dark:prose-invert">
-    <h1>Launching {content.project.name}</h1>
-    <p data-testid="launch-post-body">
-      Per-project launch post body goes here. The repo scaffolder will fill this in
-      from the project's <code>blog-post.md</code>.
+    <h1>Launching memorystore — local-first, MCP-native memory for AI assistants</h1>
+
+    <p><em>Alpha release. One Docker compose. One SQLite file. Zero external network calls — verified at runtime.</em></p>
+
+    <hr />
+
+    {/* Section 1: Implementer's fictional draft — Aiden rewrites with the real moment before publishing. */}
+    <h2>Why I built this</h2>
+
+    <p>
+      Last summer I was migrating from ChatGPT to Claude Desktop, and I realized
+      something uncomfortable: a year of preferences, project context, half-finished
+      side-quest threads, and the model's sense of how I actually think — all of it
+      was locked inside ChatGPT. There was no export, no migration tool, no clean
+      way to bring "the part of the assistant that knows me" with me. I could copy
+      out a few summaries, but the actual memory layer was someone else's database
+      row.
+    </p>
+
+    <p>
+      That bugged me more the longer I sat with it. We've spent twenty years
+      learning that data portability matters. Then we handed our most personal
+      working context — the stuff a model uses to understand who you are and what
+      you're working on — to whichever cloud assistant we picked first. And every
+      "AI memory" startup that pitched me afterward wanted me to upload that
+      context to <em>their</em> servers, in exchange for a UI and a feature roadmap.
+    </p>
+
+    <p>
+      AI memory should be mine. It should live in a file I own, on a disk I
+      control, that I can grep, back up, delete, or move between assistants.
+      memorystore is my attempt at that primitive.
+    </p>
+
+    <h2>What's broken today</h2>
+
+    <p>
+      The current "personal AI memory" landscape splits cleanly into two camps,
+      and neither one fits the user who wants sovereignty by default:
+    </p>
+
+    <p>
+      <strong>Cloud memory products</strong> — Mem0, Letta, Zep, and a long tail
+      of similar SaaS — are convenient and feature-rich, but the price of admission
+      is uploading your most personal working context to someone else's
+      infrastructure. That's the right trade for many teams. It's the wrong trade
+      for the user who wanted self-hosted in the first place.
+    </p>
+
+    <p>
+      <strong>Self-hosted kits</strong> — Postgres + pgvector, or chromadb /
+      qdrant / weaviate paired with a homemade ingestion script — are
+      production-grade but operationally heavy for a single human. You're
+      configuring a database, an embedding pipeline, an indexing strategy, and a
+      retrieval surface before you can store your first memory. None of them
+      speak MCP, so connecting them to Claude Desktop or Cursor is yet another
+      layer of glue.
+    </p>
+
+    <p>
+      The gap I kept hitting: nothing ships as <em>one Docker compose, plus one
+      MCP config, plus done</em>. That's the primitive missing from the market.
+    </p>
+
+    <h2>Why existing solutions fall short (the honest version)</h2>
+
+    <p>
+      To be fair to the prior art:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Mem0, Letta, Zep are good products.</strong> If you don't care
+        about data residency and you want a polished memory layer that scales to
+        teams, they're a reasonable pick. They're solving a different problem than
+        I am.
+      </li>
+      <li>
+        <strong>Postgres + pgvector is the right answer at scale.</strong> If
+        you're building a multi-tenant product, that stack is battle-tested and
+        will outlive whatever I ship. It's just heavy when "the multi-tenant
+        product" is a single human and their laptop.
+      </li>
+      <li>
+        <strong>Existing self-hosted vector DBs are well-engineered.</strong>
+        chromadb, qdrant, weaviate are all good projects. They just don't compose
+        into "drop into Claude Desktop in 30 seconds" out of the box.
+      </li>
+    </ul>
+
+    <p>
+      The honest gap is a missing combination, not a missing component:
+      MCP-native + single-binary + runtime-verifiable-privacy + drop-in for
+      desktop assistants. memorystore is the smallest viable thing I could build
+      that fills that combination.
+    </p>
+
+    <h2>The proposal in plain English</h2>
+
+    <p>
+      memorystore is one process that does one thing: it stores text memories
+      with vector embeddings on your local disk and serves them back via
+      retrieval. It's an MCP server first (so Claude Desktop, Cursor, and other
+      MCP clients pick it up natively) and an HTTP REST server second (so
+      anything that can hit localhost can use it).
+    </p>
+
+    <ul>
+      <li>Storage is one SQLite file — <code>memorystore.db</code> — with the <code>sqlite-vec</code> extension for vector search.</li>
+      <li>Embeddings come from Ollama running locally. Default model is <code>nomic-embed-text</code>, swappable in config.</li>
+      <li>The MCP surface is four tools: <code>store_memory</code>, <code>recall_memory</code>, <code>list_memories</code>, <code>delete_memory</code>.</li>
+      <li>Privacy is runtime-enforced, not marketed. Every outbound HTTP call from the server flows through an audit wrapper that classifies it internal vs external and writes to <code>./logs/network.jsonl</code>. The benchmark fails if any external call is logged during a run.</li>
+    </ul>
+
+    <p>
+      Drop the MCP config into Claude Desktop, restart the app, and your
+      assistant has a memory backend that lives in a file you can move, back up,
+      delete, or inspect. The whole thing is a couple thousand lines of Node.
+    </p>
+
+    <h2>The numbers</h2>
+
+    <p>
+      Recall numbers come from a 100-memory ingest plus 50 hand-built recall
+      questions covering direct lookups, paraphrased retrieval,
+      distinguishing-detail probes, and decoy-resistance items. Run it yourself
+      with <code>node benchmark/run.mjs</code> after pointing <code>CONFIG_PATH</code> at your config. Three
+      consecutive runs landed identical recall (deterministic given a fixed
+      embedding model, dataset, and <code>default_k</code>); see <code>calibration.md</code> for the
+      full audit log.
+    </p>
+
+    <pre><code>RECALL:
+  top-1 hit rate:  43 / 50 (86.0%)
+  top-5 hit rate:  48 / 50 (96.0%)
+
+LATENCY (per query):
+  p50:  49ms
+  p95:  58ms
+  max:  61ms
+
+NETWORK FOOTPRINT:
+  external calls:  0
+  audit log:       ./data/logs/network.jsonl
+
+STATUS: Strong band</code></pre>
+
+    <p>
+      Watch a fresh run: <a href="https://asciinema.org/a/<id>">asciinema.org/a/&lt;id&gt;</a>.
+    </p>
+
+    <p>
+      The honest caveat: the workload is biased. It's hand-built by me, single-user,
+      English-only, and tuned to the kind of personal-memory questions I expect a
+      Claude Desktop user to ask. The numbers don't tell you anything about
+      multi-language recall, adversarial probes, or what happens at 10,000
+      memories — they tell you what the alpha looks like on the workload it was
+      designed for. Treat the band classifier (<code>Strong</code> /
+      <code>Acceptable</code> / <code>Weak</code>) as the durable signal, not the
+      exact percentages.
+    </p>
+
+    <h2>What I want from you</h2>
+
+    <p>
+      Three specific asks, in priority order:
+    </p>
+
+    <ol>
+      <li>
+        <strong>Try it with your own MCP client and tell me what broke.</strong>
+        Claude Desktop is the primary integration target, but Cursor, Continue,
+        and any other MCP-stdio client should work. If you get a cryptic error,
+        a config that doesn't load, or a tool call that hangs, file an issue
+        with the OS, the client, and the exact steps. This is the highest-value
+        feedback I can get right now.
+      </li>
+      <li>
+        <strong>Threat-model gaps.</strong> The audit-log approach catches HTTP
+        traffic going through Node's <code>fetch</code>. It does <em>not</em> catch DNS lookups,
+        and it doesn't catch traffic from native bindings that bypass the
+        wrapper. If you can think of an attack surface I haven't covered, tell
+        me — that's the kind of feedback that makes the privacy claim
+        defensible.
+      </li>
+      <li>
+        <strong>Long-running personal-memory workload data.</strong> The
+        100-memory benchmark is a calibration set, not a real workload. If you
+        have a year of journal entries, a multi-year chat history, or another
+        long-running personal-memory dataset, I want to know whether the
+        86%-top-1 number holds at 10,000 memories or whether it falls off a
+        cliff around 1,000.
+      </li>
+    </ol>
+
+    <h2>Where to find me</h2>
+
+    <p>
+      GitHub: <a href="https://github.com/Accuoa">@Accuoa</a>. Twitter:
+      <a href="https://twitter.com/AccuoaAgent">@AccuoaAgent</a>. dev.to:
+      <a href="https://dev.to/accuoa">@accuoa</a>. Drop comments on this post,
+      file GitHub issues, or DM me on Twitter — whichever channel is most
+      convenient. Issues with reproducible repro steps will get the most
+      attention.
     </p>
   </article>
 </Landing>
