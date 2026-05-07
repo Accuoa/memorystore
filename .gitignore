@@ -6,3 +6,6 @@ dist/
 *.log
 .env
 .env.local
+logs/
+data/
+benchmark/baseline*.jsonl
