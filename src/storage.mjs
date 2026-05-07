@@ -6,8 +6,11 @@ import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-function applySchema(db) {
-  const schema = readFileSync(join(__dirname, 'schema.sql'), 'utf-8');
+function applySchema(db, dim) {
+  const schema = readFileSync(join(__dirname, 'schema.sql'), 'utf-8').replace(
+    /__DIM__/g,
+    String(dim),
+  );
   const statements = schema
     .split(';')
     .map((s) => s.trim())
@@ -22,7 +25,7 @@ export function createStorage({ dbPath, dim }) {
   sqliteVec.load(db);
   db.pragma('journal_mode = WAL');
 
-  applySchema(db);
+  applySchema(db, dim);
 
   const insertMem = db.prepare(
     'INSERT INTO memories (text, metadata_json, created_at, updated_at) VALUES (?, ?, ?, ?)',

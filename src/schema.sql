@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS memories (
 );
 
 CREATE VIRTUAL TABLE IF NOT EXISTS memories_vec USING vec0(
-  embedding float[768]
+  embedding float[__DIM__]
 );
