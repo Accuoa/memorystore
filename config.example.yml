@@ -1,0 +1,22 @@
+storage:
+  db_path: /data/memorystore.db
+
+embedding:
+  base_url: http://ollama:11434
+  model: nomic-embed-text
+  dim: 768
+
+server:
+  http_port: 8787
+  enable_mcp_stdio: true
+
+retrieval:
+  default_k: 5
+
+audit:
+  log_path: /data/logs/network.jsonl
+  internal_hosts:
+    - localhost
+    - 127.0.0.1
+    - ollama
+    - host.docker.internal
