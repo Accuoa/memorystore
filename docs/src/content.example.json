@@ -1,42 +1,44 @@
 {
   "project": {
     "slug": "memorystore",
-    "name": "MemoryStore",
-    "statusBadge": "concept — no code yet",
+    "name": "memorystore",
+    "statusBadge": "alpha demo",
     "primaryCta": {
-      "label": "Read on GitHub",
-      "href": "https://github.com/Accuoa/memorystore"
+      "label": "Read the benchmark",
+      "href": "https://github.com/Accuoa/memorystore/tree/main/benchmark"
     }
   },
   "hero": {
-    "headline": "Placeholder — content lands when this idea ships."
+    "headline": "Self-hosted memory for your AI assistants — 86% top-1 recall, zero external calls.",
+    "demoVideoUrl": "https://asciinema.org/a/placeholder.svg"
   },
   "problem": {
-    "body": "This page is a placeholder. Real content arrives as part of this project’s launch in the next two weeks."
+    "body": "Every \"memory\" startup wants you to upload your most personal context to their servers. The selling point is convenience; the price is your data. There is no clean self-hosted primitive that fills the gap — you either run a Postgres-and-pgvector kit yourself or you give up and trust someone else's infra."
   },
   "proposal": {
-    "body": "When this project ships, this section describes the proposal — what this primitive is and isn’t, in plain language."
+    "body": "memorystore is the missing primitive: one Docker compose, one SQLite file, one MCP server. Plug it into Claude Desktop, Cursor, or your own tooling. The data stays on your machine. The benchmark in this repo proves it: 86% top-1 recall and 96% top-5 on a 50-question evaluation set, 58ms p95 query latency, zero external network calls — verified by an audit log committed alongside the calibration runs."
   },
   "whyNow": {
-    "body": "When this project ships, this section explains what shifted in 2025-2026 that makes this newly possible or needed."
+    "body": "MCP shipped. sqlite-vec shipped. Ollama is on every developer's laptop. Local embedding quality is good enough for personal-scale recall. The pieces all exist; this assembles them into a single primitive that survives r/selfhosted scrutiny."
   },
   "cta": {
-    "headline": "Get notified when this ships.",
+    "headline": "Get notified when memorystore hits 1.0.",
     "secondary": {
       "label": "Get updates",
       "placeholder": "your@email.com"
     }
   },
   "about": {
-    "body": "Built by Aiden. This is an exploratory project — feedback welcome.",
-    "githubUrl": "https://github.com/Accuoa",
-    "contactUrl": "https://twitter.com/aidenbolin"
+    "body": "Built by Aiden — solo developer working through a portfolio of AI primitives in 2026. memorystore is one of several exploratory bets; see the hub for the others. This is alpha — expect rough edges, and please file issues.",
+    "githubUrl": "https://github.com/Accuoa/memorystore",
+    "contactUrl": "https://twitter.com/AccuoaAgent"
   },
   "email": {
     "captureEndpoint": "https://api.aidenbolin.dev/signup",
     "projectId": "memorystore"
   },
   "footer": {
-    "license": "MIT"
+    "license": "MIT",
+    "rssUrl": "https://accuoa.github.io/rss.xml"
   }
 }
