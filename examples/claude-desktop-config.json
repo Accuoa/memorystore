@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "memorystore": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/memorystore/src/mcp.mjs"],
+      "env": {
+        "CONFIG_PATH": "/ABSOLUTE/PATH/TO/memorystore/config.example.yml"
+      }
+    }
+  }
+}
