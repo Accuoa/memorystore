@@ -4,7 +4,6 @@ published: false
 description: "Single-file SQLite + sqlite-vec + Ollama. Drop into Claude Desktop. Verifiable privacy at runtime."
 tags: ai, opensource, mcp, selfhosted
 canonical_url: https://accuoa.github.io/memorystore/launch
-cover_image: https://asciinema.org/a/<id>.svg
 ---
 
 *Alpha release. One Docker compose. One SQLite file. Zero external network calls — verified at runtime.*
@@ -90,8 +89,6 @@ NETWORK FOOTPRINT:
 
 STATUS: Strong band
 ```
-
-Watch a fresh run: [asciinema.org/a/&lt;id&gt;](https://asciinema.org/a/<id>).
 
 The honest caveat: the workload is biased. It's hand-built by me, single-user, English-only, and tuned to the kind of personal-memory questions I expect a Claude Desktop user to ask. The numbers don't tell you anything about multi-language recall, adversarial probes, or what happens at 10,000 memories — they tell you what the alpha looks like on the workload it was designed for. Treat the band classifier (`Strong` / `Acceptable` / `Weak`) as the durable signal, not the exact percentages.
 

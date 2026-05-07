@@ -9,8 +9,7 @@
     }
   },
   "hero": {
-    "headline": "Self-hosted memory for your AI assistants — 86% top-1 recall, zero external calls.",
-    "demoVideoUrl": "https://asciinema.org/a/placeholder.svg"
+    "headline": "Self-hosted memory for your AI assistants — 86% top-1 recall, zero external calls."
   },
   "problem": {
     "body": "Every \"memory\" startup wants you to upload your most personal context to their servers. The selling point is convenience; the price is your data. There is no clean self-hosted primitive that fills the gap — you either run a Postgres-and-pgvector kit yourself or you give up and trust someone else's infra."
